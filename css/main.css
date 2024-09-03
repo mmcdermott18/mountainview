@@ -1,0 +1,681 @@
+/*! HTML5 Boilerplate v9.0.0-RC1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* <uniquifier>: Use a unique and descriptive class name */
+/* <weight>: Use a value from 300 to 900 */
+
+/*universal styles*/
+
+* {
+  
+}
+html {
+  font-family: "Figtree", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+body {
+  margin: 0;
+}
+
+/*nav styles*/
+#hero nav {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 40px;
+}
+#hero nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+#hero nav li {
+  list-style: none;
+  margin: 0 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#hero .primary a, #hero .primary a:link, #hero .primary a:visited {
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 250ms ease;
+}
+#hero .secondary a, #hero .secondary a:link, #hero .secondary a:visited {
+  color: white;
+  text-decoration: none;
+  background-color: #0095DA;
+  padding: 10px 35px;
+  transition: background-color 250ms ease;
+}
+#hero .primary a:hover, #hero .primary a:active {
+  border-bottom: 2px solid white;
+}
+#hero .secondary a:hover, #hero .secondary a:active {
+  background-color: #46BB86;
+}
+/*image styles*/
+img {
+  max-width: 100%;
+}
+#hero img {
+  width: 100%;
+  max-width: 700px;
+}
+
+/*section styles*/
+#hero {
+  background: url("../img/hero.jpg") no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  padding: 25px;
+}
+#hero .border {
+  border: 5px solid white;
+  padding: 100px;
+}
+#hero hr {
+  border: none;
+  border-top: 5px solid #46BB86;
+  margin: 50px auto;
+  width: 50vw;
+}
+#announcement {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background-color: #D55128;
+  padding: 15px;
+}
+#services, #providers, #televisits, #contact, footer {
+  padding: 100px 60px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 20px;
+}
+#services h2, #providers h2, #televisits h2, #contact h2 {
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+#services p, #providers p, #televisits p, #contact p {
+  grid-column-start: 3;
+  grid-column-end: 11;
+}
+#services .cta, #providers .cta, #televisits .cta {
+  grid-column-start: 10;
+  width: 200px;
+  margin-top: 25px; 
+}
+#gallery {
+  padding: 20px 0;
+  overflow: hidden;
+  position: relative;
+/*  height: 540px;*/
+}
+#gallery .images img {
+  max-width: 75vw;
+}
+.slick-slide {
+  margin: 0 10px;
+}
+.slick-dots {
+  bottom: 10px;
+}
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 5px;
+    height: 5px;
+    padding: 3px;
+    cursor: pointer;
+    color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    outline: none;
+    background: none;
+}
+.slick-dots li.slick-active button {
+  background-color: white;
+}
+.slick-dots li button:before {
+  display: none;
+}
+.slick-prev {
+  left: 20px;
+}
+.slick-next {
+  right: 20px;
+}
+.slick-prev, .slick-next {
+  z-index: 5;
+}
+.slick-prev:before, .slick-next:before {
+  opacity: 1;
+}
+#contact .col-a {
+  grid-column-start: 3;
+  grid-column-end: 8;
+}
+#contact .col-b {
+  grid-column-start: 8;
+  grid-column-end: 13;
+}
+#services {
+  background-color: #144983;
+  color: white;
+}
+#providers {
+  background-color: #46BB86;
+  color: white;
+}
+#televisits {
+  background-color: #0095DA;
+  color: white;
+}
+#contact {
+  background-color: #DBD9D9;
+  color: #144983;
+}
+footer {
+  background-color: #144983;
+  color: white;
+}
+.sub-footer {
+  background-color: #0095DA;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+footer div {
+  grid-column-start: span 4;
+  border-left: 3px solid white;
+  padding-left: 25px;
+}
+#announcement p, footer .sub-footer p {
+  margin: 0;
+}
+
+/*type style*/
+h2 {
+  font-weight: 300;
+  font-size: 64px;
+  margin: 0 0 1.5rem;
+  line-height: 1;
+}
+section p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 0 0 .75rem;
+  font-weight: 300;
+}
+#contact p {
+  font-size: 1em;
+}
+footer p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0 0 5px;
+  font-weight: 300;
+}
+#contact span {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+#contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+}
+#contact li {
+  margin: 10px 0;
+}
+
+/*button styles*/
+section button {
+  background-color: rgba(0,0,0,0);
+  border: 3px solid white;
+  padding: 15px 20px;
+  border-radius: 6px;
+  transition: background 500ms ease;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: color 500ms ease;
+  width: 100%;
+}
+section a {
+  transition: color 500ms ease;
+}
+#services button:hover, #providers button:hover, #televisits button:hover {
+  background-color: white;
+  cursor: pointer;
+}
+#services a:hover button {
+  color: #144983;
+}
+#providers a:hover button {
+  color: #46BB86;
+}
+#televisits a:hover button {
+  color: #0095DA;
+}
+/*link styles*/
+a {
+  color: white;
+  text-decoration: none;
+}
+.sub-footer a, .sub-footer a:link, .sub-footer a:visited {
+  border-bottom: 1px solid white;
+
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (max-width: 1200px) {
+  #services, #providers, #televisits, #contact, footer {
+    padding: 100px 100px;
+    grid-template-columns: repeat(9, 1fr);
+    grid-column-gap: 20px;
+  }
+  #services h2, #providers h2, #televisits h2, #contact h2 {
+    grid-column-start: 1;
+    grid-column-end: 9;
+  }
+  #services p, #providers p, #televisits p, #contact p {
+    grid-column-start: 2;
+    grid-column-end: 8;
+  }
+  #services .cta, #providers .cta, #televisits .cta {
+    grid-column-start: 7;
+  }
+  #contact .col-a {
+    grid-column-start: 2;
+    grid-column-end: 6;
+  }
+  #contact .col-b {
+    grid-column-start: 6;
+    grid-column-end: 10;
+  }
+  footer div {
+    grid-column-start: span 3;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #services, #providers, #televisits, #contact, footer {
+    padding: 100px 60px;
+  }
+  #hero .border {
+    padding: 40px;
+  }
+  #hero hr {
+    width: 75vw;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #hero nav {
+    display: block;
+    text-align: center;
+    margin: 0 0 40px;
+  }
+  #hero nav ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  #hero nav li {
+    list-style: none;
+    margin: 15px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  #hero .secondary li {
+    margin-bottom: 40px;
+  }
+  #hero .primary a {
+    color: white;
+    text-decoration: none;
+  }
+  #hero .secondary a {
+    color: white;
+    text-decoration: none;
+    background-color: #0095DA;
+    padding: 10px 35px;
+  }
+  #hero .border {
+    border: none;
+    padding: 0;
+  }
+  #services, #providers, #televisits, #contact, footer {
+    padding: 100px 100px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 0;
+  }
+  #services h2, #providers h2, #televisits h2, #contact h2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  #services p, #providers p, #televisits p, #contact p {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  #services .cta, #providers .cta, #televisits .cta {
+    grid-column-start: 1;
+    justify-self: right;
+  }
+  #contact .col-a {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-bottom: 0;
+  }
+  #contact .col-b {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-top: 0;
+  }
+  #contact ul {
+    margin-bottom: 0;
+  }
+  #contact ul li {
+    margin: 0 0 10px;
+  }
+  footer div {
+    grid-column-start: span 1;
+    margin-bottom: 20px;
+    padding-left: 15px;
+  }
+  h2 {
+    font-size: 2.5rem;
+    margin: 0 0 1rem;
+  }
+  section p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin: 0 0 1rem;
+    font-weight: 300;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #services, #providers, #televisits, #contact, footer {
+    padding: 50px 25px;
+  }
+  #gallery {
+    padding: 10px 0;
+  }
+  .slick-slide {
+    margin: 0 5px;
+  }
+  .slick-prev {
+    left: 5px;
+  }
+  .slick-next {
+    right: 5px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #services, #providers, #televisits, #contact, footer {
+    padding: 50px 10px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  #services, #providers, #televisits, #contact, footer {
+    padding: 100px 80px;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  #services, #providers, #televisits, #contact, footer {
+    padding: 100px 200px;
+  }
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
