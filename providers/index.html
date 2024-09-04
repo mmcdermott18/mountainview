@@ -26,7 +26,9 @@
 
   <body>
     <header>
-      <img alt="Mountain View Internal Medicine and Pediatrics" src="img/logo-header.png">
+      <div class="logo">
+        <a href="../index.html"><img alt="Mountain View Internal Medicine and Pediatrics" src="../img/logo-header.png"></a>
+      </div>
       <nav class="secondary">
         <ul>
           <li><a href="#">Patient Portal</a></li>
@@ -35,36 +37,62 @@
       </nav>
       <nav class="primary">
         <ul>
-          <li>Providers</li>
-          <li>Televisits</li>
-          <li>Services/Forms</li>
-          <li>Office Policies</li>
+          <li><a href="#">Providers</a></li>
+          <li><a href="#">Televisits</a></li>
+          <li><a href="#">Services/Forms</a></li>
+          <li><a href="#">Office Policies</a></li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main id=interior>
+      <section id="providers">
+        <h2>Providers</h2>
+        <p>Meet our dedicated team of healthcare providers, including experienced doctors and compassionate nurses, who are committed to delivering exceptional care to all our patients.</p>
+      </section>
+      <section class="even">
+        <div class="highlight"></div>
+        <h3>Vipul Parikh, MD</h3>
+        <img src="../img/vp.jpg" alt="Vipul Parikh, MD">
+        <p>Dr. Parikh is a graduate of The University of Michigan School of Medicine. He did his residency in Internal Medicine and Pediatrics at Baylor College of Medicine. He practiced at Massachusetts General Hospital, Tulane University Hospital and Clinic and has had academic appointments through Harvard Medical School, Tulane Medical School, and currently is adjunct faculty precepting medical students at the University of VA School of Medicine. He maintains board certification in both Internal Medicine and Pediatrics. He opened Mountain View Internal Medicine and Pediatrics in 2008 and is committed to serving these local communities compassionately with current, evidence based medical care.</p>
+      </section>
+      <section class="odd">
+        <div class="highlight"></div>
+        <h3>Kajal Patel Parikh, MD</h3>
+        <img src="../img/kpp.jpg" alt="Kajal Patel Parikh, MD">
+        <p>Dr. Parikh is a graduate of Louisiana State University Health Sciences Center medical school and completed her residency in Internal Medicine there as well. She began practice in this area at Manassas Internal Medicine before joining her husband, Dr. Vipul Parikh, here at Mountain View internal Medicine and Pediatrics in 2018. She maintains board certification in Internal Medicine, and provides excellent care to and is well-loved by her patients here.</p>
+      </section>
+      <section class="even">
+        <div class="highlight"></div>
+        <h3>Chantalle Walker, PA-C</h3>
+        <img src="../img/cw.jpg" alt="Chantalle Walker, PA-C">
+        <p>Chantalle earned her Master of Science in Health Science from the University of Maryland, and was certified as a Physician Assistant in 2017. She has served as a certified PA-C in the Pediatric Reconstructive Surgery Department at Childrens Hospital National, The Emergency Medicine Department at Mount Saini Beth Israel Hospital, and Breast Surgery/Oncology at Breastlink of New York. She joined the staff at Mountain View Internal Medicine and Pediatrics in 2021. With this wealth of varied experience, Chantalle provides knowledgeable and thorough care to patients of all ages. Patients continue to specifically request her care here.</p>
+      </section>
+      <section class="odd">
+        <div class="highlight"></div>
+        <h3>Lindsey Cotton Dasher, PA-C</h3>
+        <img src="../img/lcd.jpg" alt="Lindsey Cotton Dasher, PA-C">
+        <p>Lindsey earned her Master of Public Health at Pennsylvania Status University College of Science, and her Master of Science in Physician Assistant Studies at Mercy College in Bronx, NY. She was certified as a Physician Assistant in 2012. She has served as a PA-C In San Francisco, Washington DC, and Stone Ridge Family Medicine in Aldie, VA. She brought this excellent experience to Mountain View Internal Medicine and Pediatrics in 2023. Lindsey is quickly becoming known and admired by our patients here, and is a valuable asset to the practice.</p>
+      </section>
     </main>
     <footer>
-      <div class="main-footer">
-        <div>
-          <ul>
-            <li>Follow Us</li>
-            <li>Leave Us a Review</li>
-          </ul>
-        </div>
-        <div>
-          <p>7051 Heathcote Village Way</p>
-          <p>Suite 155</p>
-          <p>Gainesville, VA 20155</p>
-        </div>
-        <div>
-          <p>Phone: 571-248-0167</p>
-          <p>Fax: 571-248-0173</p>
-        </div>
+      <div>
+        <p>Follow Us</p>
+        <p>Leave Us a Review</p>
       </div>
-      <div class="sub-footer">
-        <p>Site designed by <a href="#">Michael McDermott</a></p>
+      <div>
+        <p><a href="#">7051 Heathcote Village Way</br>Suite 155</br>Gainesville, VA 20155</a></p>
       </div>
+      <div>
+        <p>Phone: 571-248-0167</p>
+        <p>Fax: 571-248-0173</p>
+      </div>
+    </div>
+    </footer>
+    <div class="sub-footer">
+      <p>Site designed by <a href="#">Michael McDermott</a></p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.5.2.js" integrity="sha256-ThFcNr/v1xKVt5cmolJIauUHvtXFOwwqiTP7IbgP8EU=" crossorigin="anonymous"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>

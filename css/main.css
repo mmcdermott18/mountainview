@@ -105,15 +105,24 @@ body {
 /*nav styles*/
 #hero nav {
   display: flex;
-  justify-content: center;
   margin: 0 0 40px;
+  justify-content: center;
 }
-#hero nav ul {
+header nav {
+  display: flex;
+  margin: 0 0 20px;
+}
+header .secondary, header .primary {
+  grid-column-start: 6;
+  justify-content: right;
+  grid-column-end: 13;
+}
+#hero nav ul, header nav ul {
   display: flex;
   list-style: none;
   margin: 0;
 }
-#hero nav li {
+#hero nav li, header nav li {
   list-style: none;
   margin: 0 15px;
   font-weight: 600;
@@ -126,7 +135,13 @@ body {
   border-bottom: 2px solid transparent;
   transition: border-bottom 250ms ease;
 }
-#hero .secondary a, #hero .secondary a:link, #hero .secondary a:visited {
+header .primary a, header .primary a:link, header .primary a:visited {
+  color: #144983;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 250ms ease;
+}
+#hero .secondary a, #hero .secondary a:link, #hero .secondary a:visited, header .secondary a, header .secondary a:link, header .secondary a:visited {
   color: white;
   text-decoration: none;
   background-color: #0095DA;
@@ -136,9 +151,13 @@ body {
 #hero .primary a:hover, #hero .primary a:active {
   border-bottom: 2px solid white;
 }
-#hero .secondary a:hover, #hero .secondary a:active {
+header .primary a:hover, header .primary a:active {
+  border-bottom: 2px solid #144983;
+}
+#hero .secondary a:hover, #hero .secondary a:active, header .secondary a:hover, header .secondary a:active {
   background-color: #46BB86;
 }
+
 /*image styles*/
 img {
   max-width: 100%;
@@ -147,8 +166,23 @@ img {
   width: 100%;
   max-width: 700px;
 }
-
+header .logo {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  align-content: center;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
 /*section styles*/
+header {
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 20px;
+  background-color: white;
+  height: 100px;
+}
 #hero {
   background: url("../img/hero.jpg") no-repeat center center; 
   -webkit-background-size: cover;
@@ -179,6 +213,12 @@ img {
 }
 #services, #providers, #televisits, #contact, footer {
   padding: 100px 60px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 20px;
+}
+#interior section.even, #interior section.odd {
+  padding: 50px 60px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 20px;
@@ -288,19 +328,83 @@ footer div {
 #announcement p, footer .sub-footer p {
   margin: 0;
 }
-
+section.even, section.odd {
+  overflow-x: hidden;
+}
+section.even .highlight {
+  height: 2.5rem;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background-color: #0095DA;
+  position: relative;
+}
+section.odd .highlight {
+  height: 2.5rem;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  background-color: #0095DA;
+  position: relative;
+}
+section.even .highlight:before, section.odd .highlight:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2.5rem;
+  width: 400px;
+  background-color: #0095DA;
+}
+section.odd .highlight:before {
+  width: 700px;
+}
+section.even h3 {
+  grid-column-start: 2;
+  grid-column-end: 13;
+}
+section.odd h3 {
+  grid-column-start: 5;
+  grid-column-end: 13;
+}
+section.even img {
+  grid-column-start: 2;
+  grid-column-end: 6;
+}
+section.odd img {
+  grid-column-start: 5;
+  grid-column-end: 9;
+}
+section.even p {
+  grid-column-start: 6;
+  grid-column-end: 10;
+}
+section.odd p {
+  grid-column-start: 9;
+  grid-column-end: 13;
+}
 /*type style*/
 h2 {
   font-weight: 300;
-  font-size: 64px;
+  font-size: 4rem;
   margin: 0 0 1.5rem;
   line-height: 1;
 }
-section p {
+#interior h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 1.5rem;
+  line-height: 1;
+  color: #144983;
+}
+section p, #interior #providers p {
   font-size: 1.5rem;
   line-height: 1.4;
   margin: 0 0 .75rem;
   font-weight: 300;
+}
+#interior section p {
+  font-size: 1rem;
 }
 #contact p {
   font-size: 1em;
@@ -598,10 +702,22 @@ a {
   #services, #providers, #televisits, #contact, footer {
     padding: 100px 80px;
   }
+  #interior section.even, #interior section.odd {
+    padding: 50px 80px;
+  }
+  header {
+    padding: 0 80px;
+  }
 }
 @media only screen and (min-width: 1700px) {
   #services, #providers, #televisits, #contact, footer {
     padding: 100px 200px;
+  }
+  #interior section.even, #interior section.odd {
+    padding: 50px 200px;
+  }
+  header {
+    padding: 0 200px;
   }
 }
 
