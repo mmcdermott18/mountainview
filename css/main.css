@@ -94,7 +94,7 @@ textarea {
 html {
   font-family: "Figtree", system-ui;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   font-size: 16px;
 }
@@ -129,6 +129,10 @@ header .secondary, header .primary {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+header nav li {
+  display: flex;
+  vertical-align: middle;
+}
 #hero .primary a, #hero .primary a:link, #hero .primary a:visited {
   color: white;
   text-decoration: none;
@@ -148,10 +152,13 @@ header .primary a, header .primary a:link, header .primary a:visited {
   padding: 10px 35px;
   transition: background-color 250ms ease;
 }
+header .secondary a, header .secondary a:link, header .secondary a:visited {
+  padding: 6px 35px;
+}
 #hero .primary a:hover, #hero .primary a:active {
   border-bottom: 2px solid white;
 }
-header .primary a:hover, header .primary a:active {
+header .primary a:hover, header .primary a:active, header .primary a.link-active:hover {
   border-bottom: 2px solid #144983;
 }
 #hero .secondary a:hover, #hero .secondary a:active, header .secondary a:hover, header .secondary a:active {
@@ -211,7 +218,7 @@ header {
   background-color: #D55128;
   padding: 15px;
 }
-#services, #providers, #televisits, #contact, footer {
+#services, #providers, #televisits, #contact, footer, .info {
   padding: 100px 60px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -223,7 +230,7 @@ header {
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 20px;
 }
-#interior section.tele-grid {
+#interior section.tele-grid, #interior section.services-grid {
   padding: 0 60px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -331,6 +338,14 @@ footer div {
   border-left: 3px solid white;
   padding-left: 25px;
 }
+footer div img {
+  max-width: 20px;
+  margin-right: 7px;
+  margin-top: -4px;
+}
+footer div:nth-child(1) p:nth-child(1) {
+  margin-bottom: 10px;
+}
 #announcement p, footer .sub-footer p {
   margin: 0;
 }
@@ -407,8 +422,45 @@ section.tele-grid aside:after {
   width: 60px;
   background-color: #46BB86;
 }
-section.tele-grid .text {
+section.tele-grid .text, section.services-grid .text {
   padding: 50px;
+}
+section.services-grid .service-space {
+  grid-column-start: 6;
+  grid-column-end: 13;
+}
+section.services-grid aside {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  background-color: #46BB86;
+  position: relative;
+  color: white;
+}
+section.tele-grid aside li {
+  margin-bottom: 15px;
+}
+section.services-grid aside:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: -60px;
+  height: 100%;
+  width: 60px;
+  background-color: #46BB86;
+}
+.info .centered {
+  grid-column-start: 3;
+  grid-column-end: 11;
+}
+#interior hr {
+  border: none;
+  border-top: 3px solid #0095DA;
+  margin: 25px 0;
+}
+#interior .info hr {
+  border: none;
+  border-top: 3px solid #46BB86;
+  margin: 25px 0;
 }
 /*type style*/
 h2 {
@@ -426,6 +478,15 @@ h2 {
   line-height: 1;
   color: #144983;
 }
+#interior .service-space h3, #interior section.info h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin: 0 0 1.5rem;
+  line-height: 1;
+  color: black;
+}
 h5 {
   font-size: 1.2rem;
   font-weight: 700;
@@ -433,7 +494,11 @@ h5 {
   letter-spacing: 1px;
   margin: 0 0 15px;
 }
-section p, #interior #providers p, #interior #televisits p {
+.services-grid .text h5 {
+  color: black;
+  margin-bottom: 0;
+}
+section p, #interior #providers p, #interior #televisits p, #interior #services p {
   font-size: 1.5rem;
   line-height: 1.4;
   margin: 0 0 .75rem;
@@ -441,6 +506,15 @@ section p, #interior #providers p, #interior #televisits p {
 }
 #interior section p {
   font-size: 1rem;
+}
+#interior .service-space .text p {
+  margin: 20px 0;
+}
+#interior .service-space .text .no-top {
+  margin-top: 0;
+}
+#interior .service-space .text .indent {
+  margin-left: 25px;
 }
 #contact p {
   font-size: 1em;
@@ -501,9 +575,22 @@ a {
   color: white;
   text-decoration: none;
 }
+header .primary a.link-active {
+  border-bottom: 2px solid #0095DA;
+}
+#interior .text a, #interior .text a:link {
+  color: #144983;
+  border-bottom: 2px solid #144983;
+  font-weight: 600;
+}
+#interior .text a:active, #interior .text a:hover {
+  border-bottom: 2px solid #46BB86;
+}
+#interior .text a:visted {
+  color: #0095DA;
+} 
 .sub-footer a, .sub-footer a:link, .sub-footer a:visited {
   border-bottom: 1px solid white;
-
 }
 /* ==========================================================================
    Helper classes
@@ -615,10 +702,14 @@ a {
   footer div {
     grid-column-start: span 3;
   }
-  #interior section.even, #interior section.odd {
+  #interior section.even, #interior section.odd, .info {
     padding: 50px 100px;
     grid-template-columns: repeat(9, 1fr);
     grid-column-gap: 20px;
+  }
+  .info .centered {
+    grid-column-start: 2;
+    grid-column-end: 8;
   }
   section.odd .highlight {
     grid-column-start: 1;
@@ -652,7 +743,7 @@ a {
     grid-column-start: 6;
     grid-column-end: 10;
   }
-  #interior section.tele-grid {
+  #interior section.tele-grid, #interior section.services-grid {
     padding: 0 100px;
     grid-template-columns: repeat(9, 1fr);
     grid-column-gap: 20px;
@@ -669,6 +760,18 @@ a {
     right: -100px;
     width: 100px;
   }
+  section.services-grid .service-space {
+    grid-column-start: 5;
+    grid-column-end: 10;
+  }
+  section.services-grid aside {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+  section.services-grid aside:before {
+    left: -100px;
+    width: 100px;
+  }
 }
 @media only screen and (max-width: 1000px) {
   #services, #providers, #televisits, #contact, footer {
@@ -680,18 +783,22 @@ a {
   #hero hr {
     width: 75vw;
   }
-  #interior section.even, #interior section.odd {
+  #interior section.even, #interior section.odd, .info {
     padding: 50px 60px;
   }
   section.even .highlight:before, section.odd .highlight:before {
     width: 60px;
     left: -60px;
   }
-  #interior section.tele-grid {
+  #interior section.tele-grid, #interior section.services-grid {
     padding: 0 60px;
   }
   section.tele-grid aside:after {
     right: -60px;
+    width: 60px;
+  }
+  section.services-grid aside:before {
+    left: -60px;
     width: 60px;
   }
 }
@@ -779,10 +886,13 @@ a {
     margin: 0 0 1rem;
     font-weight: 300;
   }
-  #interior section.even, #interior section.odd {
+  #interior section.even, #interior section.odd, .info {
     padding: 25px 100px;
     grid-template-columns: repeat(1, 1fr);
     grid-column-gap: 0;
+  }
+  .info {
+    padding: 50px 100px;
   }
   section.even .highlight-mobile {
     display: none;
@@ -795,7 +905,7 @@ a {
   section.even .highlight:before, section.odd .highlight:before {
     display: none;
   }
-  section.even h3, section.odd h3 {
+  section.even h3, section.odd h3, .info .centered {
     grid-column-start: 1;
     grid-column-end: 2;
   }
@@ -808,16 +918,16 @@ a {
     grid-column-start: 1;
     grid-column-end: 2;
   }
-  #interior section.tele-grid {
+  #interior section.tele-grid, #interior section.services-grid {
     padding: 0 100px;
     grid-template-columns: repeat(1, 1fr);
     grid-column-gap: 0;
   }
-  section.tele-grid .text-space {
+  section.tele-grid .text-space, section.services-grid .service-space {
     grid-column-start: 1;
     grid-column-end: 2;
   }
-  section.tele-grid aside {
+  section.tele-grid aside, section.services-grid aside {
     grid-column-start: 1;
     grid-column-end: 2;
   }
@@ -834,25 +944,38 @@ a {
     width: 100px;
     background-color: #46BB86;
   }
-  section.tele-grid .text {
+  section.services-grid aside:before {
+    left: -100px;
+    width: 100px;
+  }
+  section.services-grid aside:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: -100px;
+    height: 100%;
+    width: 100px;
+    background-color: #46BB86;
+  }
+  section.tele-grid .text, section.services-grid .text {
     padding: 50px 0;
   }
 }
 @media only screen and (max-width: 500px) {
-  #services, #providers, #televisits, #contact, footer {
+  #services, #providers, #televisits, #contact, footer, .info {
     padding: 50px 25px;
   }
   #interior section.even, #interior section.odd {
     padding: 25px 25px;
   }
-  #interior section.tele-grid {
+  #interior section.tele-grid, #interior section.services-grid {
     padding: 0 25px;
   }
-  section.tele-grid aside:after {
+  section.tele-grid aside:after, section.services-grid aside:after {
     right: -25px;
     width: 25px;
   }
-  section.tele-grid aside:before {
+  section.tele-grid aside:before, section.services-grid aside:before {
     left: -25px;
     width: 25px;
   }
@@ -870,20 +993,20 @@ a {
   }
 }
 @media only screen and (max-width: 400px) {
-  #services, #providers, #televisits, #contact, footer {
+  #services, #providers, #televisits, #contact, footer, .info {
     padding: 50px 10px;
   }
   #interior section.even, #interior section.odd {
     padding: 25px 10px;
   }
-    #interior section.tele-grid {
+    #interior section.tele-grid, #interior section.services-grid {
     padding: 0 10px;
   }
-  section.tele-grid aside:after {
+  section.tele-grid aside:after, section.services-grid aside:after {
     right: -10px;
     width: 10px;
   }
-  section.tele-grid aside:before {
+  section.tele-grid aside:before, section.services-grid aside:before {
     left: -10px;
     width: 10px;
   }
@@ -892,18 +1015,22 @@ a {
   #services, #providers, #televisits, #contact, footer {
     padding: 100px 80px;
   }
-  #interior section.even, #interior section.odd, #interior section.tele-grid {
+  #interior section.even, #interior section.odd, #interior section.tele-grid, .info {
     padding: 50px 80px;
   }
   section.even .highlight:before, section.odd .highlight:before {
     width: 80px;
     left: -80px;
   }
-  #interior section.tele-grid {
+  #interior section.tele-grid, #interior section.services-grid {
     padding: 0 80px;
   }
   section.tele-grid aside:after {
     right: -80px;
+    width: 80px;
+  }
+  section.services-grid aside:before {
+    left: -80px;
     width: 80px;
   }
   header {
@@ -914,18 +1041,22 @@ a {
   #services, #providers, #televisits, #contact, footer {
     padding: 100px 12vw;
   }
-  #interior section.even, #interior section.odd {
+  #interior section.even, #interior section.odd, .info {
     padding: 50px 12vw;
   }
   section.even .highlight:before, section.odd .highlight:before {
     width: 12vw;
     left: -12vw;
   }
-  #interior section.tele-grid {
+  #interior section.tele-grid, #interior section.services-grid {
     padding: 0 12vw;
   }
   section.tele-grid aside:after {
     right: -12vw;
+    width: 12vw;
+  }
+  section.services-grid aside:before {
+    left: -12vw;
     width: 12vw;
   }
   header {
