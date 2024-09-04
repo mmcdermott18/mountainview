@@ -113,7 +113,7 @@ header nav {
   margin: 0 0 20px;
 }
 header .secondary, header .primary {
-  grid-column-start: 6;
+  grid-column-start: 5;
   justify-content: right;
   grid-column-end: 13;
 }
@@ -219,6 +219,12 @@ header {
 }
 #interior section.even, #interior section.odd {
   padding: 50px 60px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 20px;
+}
+#interior section.tele-grid {
+  padding: 0 60px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 20px;
@@ -340,7 +346,7 @@ section.even .highlight {
 }
 section.odd .highlight {
   height: 2.5rem;
-  grid-column-start: 4;
+  grid-column-start: 1;
   grid-column-end: 5;
   background-color: #0095DA;
   position: relative;
@@ -349,13 +355,10 @@ section.even .highlight:before, section.odd .highlight:before {
   content: " ";
   position: absolute;
   top: 0;
-  right: 0;
+  left: -60px;
   height: 2.5rem;
-  width: 400px;
+  width: 60px;
   background-color: #0095DA;
-}
-section.odd .highlight:before {
-  width: 700px;
 }
 section.even h3 {
   grid-column-start: 2;
@@ -381,6 +384,32 @@ section.odd p {
   grid-column-start: 9;
   grid-column-end: 13;
 }
+section.tele-grid .text-space {
+  grid-column-start: 1;
+  grid-column-end: 7;
+}
+section.tele-grid aside {
+  grid-column-start: 8;
+  grid-column-end: 13;
+  background-color: #46BB86;
+  position: relative;
+  color: white;
+}
+section.tele-grid aside li {
+  margin-bottom: 15px;
+}
+section.tele-grid aside:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: -60px;
+  height: 100%;
+  width: 60px;
+  background-color: #46BB86;
+}
+section.tele-grid .text {
+  padding: 50px;
+}
 /*type style*/
 h2 {
   font-weight: 300;
@@ -397,7 +426,14 @@ h2 {
   line-height: 1;
   color: #144983;
 }
-section p, #interior #providers p {
+h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 15px;
+}
+section p, #interior #providers p, #interior #televisits p {
   font-size: 1.5rem;
   line-height: 1.4;
   margin: 0 0 .75rem;
@@ -579,6 +615,60 @@ a {
   footer div {
     grid-column-start: span 3;
   }
+  #interior section.even, #interior section.odd {
+    padding: 50px 100px;
+    grid-template-columns: repeat(9, 1fr);
+    grid-column-gap: 20px;
+  }
+  section.odd .highlight {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  section.even .highlight:before, section.odd .highlight:before {
+    left: -100px;
+    width: 100px;
+  }
+  section.even h3 {
+    grid-column-start: 2;
+    grid-column-end: 10;
+  }
+  section.odd h3 {
+    grid-column-start: 3;
+    grid-column-end: 10;
+  }
+  section.even img {
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+  section.odd img {
+    grid-column-start: 3;
+    grid-column-end: 6;
+  }
+  section.even p {
+    grid-column-start: 5;
+    grid-column-end: 9;
+  }
+  section.odd p {
+    grid-column-start: 6;
+    grid-column-end: 10;
+  }
+  #interior section.tele-grid {
+    padding: 0 100px;
+    grid-template-columns: repeat(9, 1fr);
+    grid-column-gap: 20px;
+  }
+  section.tele-grid .text-space {
+    grid-column-start: 1;
+    grid-column-end: 6;
+  }
+  section.tele-grid aside {
+    grid-column-start: 6;
+    grid-column-end: 10;
+  }
+  section.tele-grid aside:after {
+    right: -100px;
+    width: 100px;
+  }
 }
 @media only screen and (max-width: 1000px) {
   #services, #providers, #televisits, #contact, footer {
@@ -589,6 +679,20 @@ a {
   }
   #hero hr {
     width: 75vw;
+  }
+  #interior section.even, #interior section.odd {
+    padding: 50px 60px;
+  }
+  section.even .highlight:before, section.odd .highlight:before {
+    width: 60px;
+    left: -60px;
+  }
+  #interior section.tele-grid {
+    padding: 0 60px;
+  }
+  section.tele-grid aside:after {
+    right: -60px;
+    width: 60px;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -675,10 +779,82 @@ a {
     margin: 0 0 1rem;
     font-weight: 300;
   }
+  #interior section.even, #interior section.odd {
+    padding: 25px 100px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 0;
+  }
+  section.even .highlight-mobile {
+    display: none;
+  }
+  section.even .highlight, section.odd .highlight {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-bottom: 25px;
+  }
+  section.even .highlight:before, section.odd .highlight:before {
+    display: none;
+  }
+  section.even h3, section.odd h3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  section.even img, section.odd img {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-bottom: 25px;
+  }
+  section.even p, section.odd p {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  #interior section.tele-grid {
+    padding: 0 100px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 0;
+  }
+  section.tele-grid .text-space {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  section.tele-grid aside {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  section.tele-grid aside:after {
+    right: -100px;
+    width: 100px;
+  }
+  section.tele-grid aside:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: -100px;
+    height: 100%;
+    width: 100px;
+    background-color: #46BB86;
+  }
+  section.tele-grid .text {
+    padding: 50px 0;
+  }
 }
 @media only screen and (max-width: 500px) {
   #services, #providers, #televisits, #contact, footer {
     padding: 50px 25px;
+  }
+  #interior section.even, #interior section.odd {
+    padding: 25px 25px;
+  }
+  #interior section.tele-grid {
+    padding: 0 25px;
+  }
+  section.tele-grid aside:after {
+    right: -25px;
+    width: 25px;
+  }
+  section.tele-grid aside:before {
+    left: -25px;
+    width: 25px;
   }
   #gallery {
     padding: 10px 0;
@@ -697,13 +873,38 @@ a {
   #services, #providers, #televisits, #contact, footer {
     padding: 50px 10px;
   }
+  #interior section.even, #interior section.odd {
+    padding: 25px 10px;
+  }
+    #interior section.tele-grid {
+    padding: 0 10px;
+  }
+  section.tele-grid aside:after {
+    right: -10px;
+    width: 10px;
+  }
+  section.tele-grid aside:before {
+    left: -10px;
+    width: 10px;
+  }
 }
 @media only screen and (min-width: 1440px) {
   #services, #providers, #televisits, #contact, footer {
     padding: 100px 80px;
   }
-  #interior section.even, #interior section.odd {
+  #interior section.even, #interior section.odd, #interior section.tele-grid {
     padding: 50px 80px;
+  }
+  section.even .highlight:before, section.odd .highlight:before {
+    width: 80px;
+    left: -80px;
+  }
+  #interior section.tele-grid {
+    padding: 0 80px;
+  }
+  section.tele-grid aside:after {
+    right: -80px;
+    width: 80px;
   }
   header {
     padding: 0 80px;
@@ -711,13 +912,24 @@ a {
 }
 @media only screen and (min-width: 1700px) {
   #services, #providers, #televisits, #contact, footer {
-    padding: 100px 200px;
+    padding: 100px 12vw;
   }
   #interior section.even, #interior section.odd {
-    padding: 50px 200px;
+    padding: 50px 12vw;
+  }
+  section.even .highlight:before, section.odd .highlight:before {
+    width: 12vw;
+    left: -12vw;
+  }
+  #interior section.tele-grid {
+    padding: 0 12vw;
+  }
+  section.tele-grid aside:after {
+    right: -12vw;
+    width: 12vw;
   }
   header {
-    padding: 0 200px;
+    padding: 0 12vw;
   }
 }
 
