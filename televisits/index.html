@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../css/main.css">
     <meta name="description" content="">
 
@@ -25,9 +26,12 @@
   </head>
 
   <body>
-    <header>
-      <div class="logo">
+    <header class="desktop">
+      <div class="logo-big">
         <a href="../index.html"><img alt="Mountain View Internal Medicine and Pediatrics" src="../img/logo-header.png"></a>
+      </div>
+      <div class="logo-small">
+        <a href="../index.html"><img alt="Mountain View Internal Medicine and Pediatrics" src="../img/logo-mobile.png"></a>
       </div>
       <nav class="secondary">
         <ul>
@@ -41,6 +45,30 @@
           <li><a href="#" class="link-active">Televisits</a></li>
           <li><a href="../services/index.html">Services/Forms</a></li>
           <li><a href="../policies/index.html">Office Policies</a></li>
+        </ul>
+      </nav>
+    </header>
+    <header class="mobile">
+      <div class="logo">
+        <a href="../index.html"><img alt="Mountain View Internal Medicine and Pediatrics" src="../img/logo-mobile.png"></a>
+      </div>
+      <nav class="menu-button">
+        <ul>
+          <li id="open"><span class="material-symbols-outlined">menu</span> Menu</li>
+          <li id="close" class="hidden"><span class="material-symbols-outlined">close</span> Close</li>
+        </ul>
+      </nav>
+      <nav id="mobile-nav" class="hidden">
+        <ul class="primary">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../providers/index.html">Providers</a></li>
+          <li><a href="#" class="link-active">Televisits</a></li>
+          <li><a href="../services/index.html">Services/Forms</a></li>
+          <li><a href="../policies/index.html">Office Policies</a></li>
+        </ul>
+        <ul class="secondary">
+          <li><a href="#">Patient Portal</a></li>
+          <li><a href="#">Pay My Bill</a></li>
         </ul>
       </nav>
     </header>
@@ -92,6 +120,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-migrate-3.5.2.js" integrity="sha256-ThFcNr/v1xKVt5cmolJIauUHvtXFOwwqiTP7IbgP8EU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../slick/slick.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>
