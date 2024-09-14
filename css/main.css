@@ -592,6 +592,12 @@ a {
   color: white;
   text-decoration: none;
 }
+#contact a {
+  color: #144983;
+}
+#contact a:hover, footer a:hover {
+  text-decoration: underline;
+}
 header .primary a.link-active {
   border-bottom: 2px solid #0095DA;
 }
